@@ -1,0 +1,10 @@
+.footer-item {
+    max-width: 48px;
+}
+
+.footer-item > a > img {
+    padding: 8px;
+    width: 54px;
+    background-color: var(--bright-color);
+    border-radius: 8px;
+}
