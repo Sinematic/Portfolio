@@ -54,8 +54,8 @@ function Projects(props: { hide: boolean }) {
 
     const [index, setIndex] = useState(0)
     const [display, setDisplay] = useState(false)
-    const handleIndex = () => index < projects.length - 1 ? setIndex(index + 1) : setIndex(0)
-    
+    const next = () => index < projects.length - 1 ? setIndex(index + 1) : setIndex(0)
+	const previous = () => index > 0 ? setIndex(index - 1) : setIndex(projects.length -1)
     
     return (
         <section id="projects" className={hide ? "hidden" : ""}>
@@ -66,6 +66,7 @@ function Projects(props: { hide: boolean }) {
 
                 <div onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}
                 key={uuidv4()} className="project" >
+
 
                     {!display ? 
                         <div className="face">
@@ -86,9 +87,21 @@ function Projects(props: { hide: boolean }) {
                         </div>
                     }
                 </div>
-            </div>
 
-            <button onClick={handleIndex}>Switch project</button>
+				<div className="arrows">
+					<svg onClick={previous} className="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+					stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+						<path d="m12 8-4 4 4 4"/>
+						<path d="M16 12H8"/>
+					</svg>	
+
+					<svg onClick={next} className="next" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
+					stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+						<path d="m12 8-4 4 4 4"/>
+						<path d="M16 12H8"/>
+					</svg>
+				</div>
+            </div>
         </section>
     )
 }

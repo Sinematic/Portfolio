@@ -21,7 +21,7 @@ function Profile(props: { hide: boolean }) {
             <div className="profile-info">                
                 <h1>Maxime Rache</h1>
                 <p>Web Developer</p>
-                <button onClick={toggleBio} className={displayBio ? "revealed" : ""}>
+                <button onClick={toggleBio} className={"dark-button" + (displayBio ? " revealed" : "")}>
                     {displayBio ? "See less 😌" : "See more ✨"}</button>
             </div>
         </section>

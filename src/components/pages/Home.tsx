@@ -1,30 +1,44 @@
 import "../../styles/pages/Home.css"
 import Footer from "../Footer/Footer"
 import { useState } from "react"
-import Nav from "../Nav"
+import Nav from "../Nav/Nav"
 import Profile from "../sections/Profile"
 import Projects from "../sections/Projects"
+import Stack from "../sections/Stack"
 
 function Home() {
 
     const [page, setPage] = useState<string>("profile")
     const [hideProfile, setHideProfile] = useState<boolean>(false)
+    const [hideProjects, setHideProjects] = useState<boolean>(true)
+    const [hideStack, setHideStack] = useState<boolean>(true)
+    window.location.hash = "profile"
 
     const togglePage = (param: string) => {
 
-        if (page === "profile") setHideProfile(true)
+        if (page === "profile") {
+            setHideProfile(true)
+            param === "projects" ? setHideProjects(false) : setHideStack(false)
+        }
+        if (page === "projects") {
+            setHideProjects(true)
+            param === "stack" ? setHideStack(false) : setHideProfile(false)
+        }
+        if (page === "stack") {
+            setHideStack(true)
+            param === "profile" ? setHideProfile(false) : setHideProjects(false)
+        }
+        
         setTimeout(() => { setPage(param) }, 1000)
     }
 
     return (
         <main className="home">
-            { page === "profile" ? <Profile hide={hideProfile} /> : null}
-            { page === "projects" ? <Projects hide={false} />
-            : null}
+            <Profile hide={hideProfile} />
+            <Projects hide={hideProjects} />
+            <Stack hide={hideStack} />
 
-            <button onClick={() => togglePage("projects")}>Changer de section</button>
-            <Nav setter={togglePage} />
-
+            <Nav toggle={togglePage} page={page} />
             <Footer />
         </main>
     )

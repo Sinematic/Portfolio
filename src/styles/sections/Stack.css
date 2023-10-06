@@ -1,0 +1,26 @@
+#stack {
+    top: 30%;
+}
+
+#stack > ol {
+    display: grid;
+    justify-content: center;
+    gap: 48px;
+    width: 70%;
+    grid-template-columns: repeat(auto-fit, 125px);
+    margin: 0 auto;
+}
+
+#stack > ol li {
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1px solid #d3d7d7;
+    border-radius: 5px;
+}
+
+.stack-icon {
+    margin: auto;
+    width: 64px;
+}

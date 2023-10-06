@@ -7,4 +7,51 @@
     padding-inline: 60px;
     box-sizing: border-box !important;
     overflow: hidden;
+    flex-direction: row;
+}
+
+.home h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.home > section {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.8s 0.4s ease-in-out;
+    border: 2px var(--orange);
+    margin: 0 auto;
+}
+
+.home > section:not(#profile) {
+    flex-direction: column;
+}
+
+.home > section.hidden {
+    left: -100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.dark-button {
+    background-color: var(--black);
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding-block: 15px;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.6s ease-in;
+}
+
+.dark-button.revealed {
+    background-color: var(--orange);
+    transition: background-color 0.6s ease-in;
 }

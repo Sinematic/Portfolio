@@ -1,17 +1,5 @@
 #profile {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    transition: all 1s ease-in-out;
-}
-
-#profile.hidden {
-    left: -100%;
-    transition: all 1s ease-in-out;
+    align-items: flex-start;
 }
 
 #profile > .picture-container {
@@ -69,7 +57,7 @@
     gap: 15px;
     flex-direction: column;
     justify-content: center;
-    padding-block: 50px 0;
+    padding-block: 120px 0;
     font-size: 1.6rem;
     line-height: 150%;
 }
@@ -81,21 +69,5 @@
 
 #profile > .profile-info > p {
     text-align: center;
-    padding-bottom: 40px;
-}
-
-#profile > .profile-info > button {
-    background-color: var(--black);
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding-block: 15px;
-    border-radius: 8px;
-    border: none;
-    transition: background-color 1.2s ease-in;
-}
-
-#profile > .profile-info > button.revealed {
-    background-color: var(--orange);
-    transition: background-color 1.2s ease-in;
+    padding-bottom: 24px;
 }

@@ -1,22 +1,23 @@
 #projects {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    transition: all 1s ease-in-out;
+    top: 20%;
 }
 
-#projects.hidden {
-    top: -100%;
-    transition: all 1s ease-in-out;
+
+#projects > button {
+    width: fit-content;
+    background-color: var(--black);
+    color: #FFFFFF;
+    padding: 15px 24px;
+    border-radius: 5px;
+    border: none;
 }
 
-.project-list > .project {
+.projects-list {
+    margin: 0 auto;
     position: relative;
+}
+
+.projects-list > .project {
     width: 480px;
     height: 380px;
     overflow: hidden;
@@ -62,13 +63,13 @@
     text-align: center;
 }
 
-.project .project-image {
+.project > .face > .project-image {
     width: 100%;
     aspect-ratio: 2 / 1;
     object-fit: cover;
 }
 
-.project .skills {
+.project > .hover .skills {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -78,16 +79,48 @@
     gap: 40px;
 }
 
-.project li {
+.project > .hover li {
     display: grid;
     grid-template-columns: 1fr;
 }
 
+.project > .hover li > p {
+    font-size: 1rem;
+}
+
 .skill-icon {
-    margin: auto;
     width: 36px;
+    height: 36px;
+    margin: auto;
 }
 
 .skill-icon.white {
     background-color: #FFFFFF;
+}
+
+.arrows {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(-50%);
+    left: -100px;
+    right: -100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows > svg {
+    max-width: 64px;
+    stroke: #FFFFFF;
+    background-color: var(--black);
+    border-radius: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.arrows > svg:hover {
+    background-color: var(--orange);
+    transition: all 0.4s ease-in;
+}
+
+.next {
+    transform: scaleX(-1);
 }
