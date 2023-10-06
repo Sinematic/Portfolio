@@ -12,8 +12,7 @@ function Home() {
     const [hideProfile, setHideProfile] = useState<boolean>(false)
     const [hideProjects, setHideProjects] = useState<boolean>(true)
     const [hideStack, setHideStack] = useState<boolean>(true)
-    window.location.hash = "profile"
-
+    
     const togglePage = (param: string) => {
 
         if (page === "profile") {
