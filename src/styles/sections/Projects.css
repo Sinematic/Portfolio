@@ -1,0 +1,93 @@
+#projects {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: all 1s ease-in-out;
+}
+
+#projects.hidden {
+    top: -100%;
+    transition: all 1s ease-in-out;
+}
+
+.project-list > .project {
+    position: relative;
+    width: 480px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.face, .hover {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 285px;
+    border-radius: 10px;
+}
+
+.face {
+    border: 3px solid var(--black);
+    gap: 8px;
+    overflow: hidden;
+}
+
+.hover {
+    align-items: space-between;
+    background-color: var(--black);
+    color: var(--black);
+    opacity: 0;
+    padding-block: 24px;
+    padding-inline: 30px;
+    z-index: 200;
+}
+
+.hover.revealed {
+    opacity: 1;
+    color: #FFFFFF;
+    transition: opacity 0.9s ease-out, color 0.2 0.9s ease-in-out;
+}
+
+.project h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.project .project-image {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+}
+
+.project .skills {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.project li {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.skill-icon {
+    margin: auto;
+    width: 36px;
+}
+
+.skill-icon.white {
+    background-color: #FFFFFF;
+}

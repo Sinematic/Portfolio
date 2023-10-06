@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid"
 import FooterItem from "./FooterItem"
 import "../../styles/Footer/Footer.css"
 
@@ -29,7 +30,9 @@ function Footer() {
             {items ? 
                 <footer>
                     <ul>
-                        {items.map((item) => <FooterItem name={item.name} image={item.image} link={item.link} />)}
+                        {items.map((item) => 
+                            <FooterItem key={uuidv4()} name={item.name} image={item.image} link={item.link} />
+                        )}
                     </ul>
                 </footer> 
             : null}
