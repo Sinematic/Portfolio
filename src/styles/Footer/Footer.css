@@ -19,3 +19,25 @@ footer > ul {
 footer > ul > li {
     display: inline-block;
 }
+
+
+@media all and (max-width: 1240px) {
+
+    footer > ul {
+        gap: 65px;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+    footer > ul {
+        gap: 40px;
+    }   
+}
+
+@media all and (max-width: 375px) {
+
+    footer > ul {
+        gap: 25px;
+    }
+}

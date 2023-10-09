@@ -1,14 +1,5 @@
 #projects {
-    top: 20%;
-}
-
-#projects > button {
-    width: fit-content;
-    background-color: var(--black);
-    color: #FFFFFF;
-    padding: 15px 24px;
-    border-radius: 5px;
-    border: none;
+    top: 15%;
 }
 
 .projects-list {
@@ -20,6 +11,7 @@
     width: 480px;
     height: 380px;
     overflow: hidden;
+    margin: auto;
     border-radius: 10px;
 }
 
@@ -131,4 +123,77 @@
     bottom: 0px;
     font-weight: 700;
     color: #FFFFFF;
+}
+
+@media all and (max-width: 1240px) {
+
+    #projects {
+        top: 60px;
+    }
+
+    .arrows {
+        left: -60px;
+        right: -60px;
+    }
+
+    .arrows > svg {
+        max-width: 48px;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+    .projects-list > .project {
+        width: calc(100% - 40px);
+        margin: auto;
+        height: 380px;
+    }
+    
+    .face, .hover {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow: visible;
+    }
+
+    .hover {
+        padding-block: 10px;
+        padding-inline: 15px;
+    }
+    
+    .project h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    
+    .project > .face > .project-image {
+        aspect-ratio: 2.7 / 1;
+        border-radius: 10px;
+    }
+    
+    .project > .hover .skills {
+        gap: 20px;
+    }
+
+    .skill-icon, .github > svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .arrows {
+        left: 20px;
+        right: 20px;
+    }
+    
+    .arrows > svg {
+        max-width: 42px;
+        border-radius: 10px;
+    }
+}
+
+@media all and (max-width: 375px) {
+
 }

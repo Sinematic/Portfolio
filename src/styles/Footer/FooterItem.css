@@ -3,8 +3,30 @@
 }
 
 .footer-item > a > img {
-    padding: 8px;
+    padding: 5px;
     width: 54px;
     background-color: var(--bright-color);
     border-radius: 8px;
+}
+
+
+@media all and (max-width: 1240px) {
+
+    .footer-item > a > img {
+        padding: 8px;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+    .footer-item > a > img {
+        padding: 4px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .footer-item > a > img {
+        width: 48px;
+        padding: 0%;
+    }
 }

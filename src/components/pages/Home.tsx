@@ -10,6 +10,7 @@ function Home() {
 
     const storageItem = localStorage.getItem("auto")
     const auto = storageItem !== null ? JSON.parse(storageItem) : true
+
     const [page, setPage] = useState<string>("profile")
     const [hideProfile, setHideProfile] = useState<boolean>(false)
     const [hideProjects, setHideProjects] = useState<boolean>(true)

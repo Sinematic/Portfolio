@@ -26,13 +26,13 @@ function Projects(props: { hide: boolean }) {
                 key={uuidv4()} className="project" >
 
 
-                    {!display ? 
+                    {display ? 
                         <div className="face">
                             <img src={projects[index].image} alt={projects[index].title} className="project-image" />
                             <h3>{projects[index].title}</h3>
                         </div>
                     :
-                        <div className={(display ? "revealed " :  "") + "hover"}>
+                        <div className={(!display ? "revealed " :  "") + "hover"}>
                             <p className="description">{projects[index].description}</p>                      
                             <ol className="skills">
                                 {projects[index].skills.map((skill) => 

@@ -71,3 +71,85 @@
     text-align: center;
     padding-bottom: 24px;
 }
+
+@media all and (max-width: 1240px) {
+
+}
+
+@media all and (max-width: 720px) {
+
+    #profile {
+        padding-top: 0;
+        flex-direction: column;
+    }
+    
+    #profile > .picture-container {
+        width: 40%;
+        min-width: none;
+        margin: auto;
+    }
+
+    .bio.revealed {
+        padding-inline: 9%;
+    }
+
+    .bio > p {
+        font-size: 1.2rem;
+    }
+    
+    #profile > .profile-info {
+        gap: 10px;
+        margin: auto;
+        padding-block: 0;
+        font-size: 1.3rem;
+    }
+    
+    #profile > .profile-info > h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    
+    #profile > .profile-info > p {
+        font-weight: 500;
+        text-align: center;
+        padding-bottom: 0;
+    }
+}
+@media all and (max-width: 375px) {
+
+    #profile {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin: auto;
+        padding-top: 30px;
+        max-width: 375px;
+    }
+
+    #profile > .picture-container {
+        min-width: 100px;
+        width: 70%;
+    }
+    
+    .picture-container, .picture-container > img {
+        width: 100px;
+    }
+
+    .bio > p {
+        font-size: 0.8rem;
+    }
+    
+    #profile > .profile-info {
+        gap: 8px;
+        font-size: 1.4rem;
+    }
+    
+    #profile > .profile-info > h1 {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+}
+
+@media all and (max-width: 330px) {
+
+}
