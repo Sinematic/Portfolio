@@ -8,7 +8,8 @@ import Stack from "../sections/Stack"
 
 function Home() {
 
-    const auto = localStorage.getItem("auto") !== null ? JSON.parse(localStorage.getItem("auto")) : true
+    const storageItem = localStorage.getItem("auto")
+    const auto = storageItem !== null ? JSON.parse(storageItem) : true
     const [page, setPage] = useState<string>("profile")
     const [hideProfile, setHideProfile] = useState<boolean>(false)
     const [hideProjects, setHideProjects] = useState<boolean>(true)
@@ -39,22 +40,23 @@ function Home() {
         if (automatic) {
             if (page === "profile") {
                 setTimeout(() => {   
-                    if (automatic) togglePage("projects")
+                    if (automatic !== true) return 
+                    togglePage("projects")
                 }, 3000)
             }
         
             if (page === "projects") {
                 setTimeout(() => {    
-                    if (automatic) togglePage("stack")
+                    if (automatic !== true) return
+                    togglePage("stack")
                 }, 3000)
             }
         
             if (page === "stack") {
                 setTimeout(() => {  
-                    if (automatic) {
-                        togglePage("profile")
-                        setAutomatic(false)
-                    }
+                    if (automatic !== true) return
+                    togglePage("profile")
+                    setAutomatic(false)
                 }, 3000)
             }
         }
@@ -88,7 +90,7 @@ function Home() {
                 <div className="details" onClick={handleDetails}>
                     <p className={showOptionDetails ? "revealed" : ""}>Discovery mode (automatically guides you through the website)</p>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-                    stroke="currentColor" strokeWidth="2" stroke-linecap="round" stroke-linejoin="round">
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
                         <path d="M12 17h.01"/>
