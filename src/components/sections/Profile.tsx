@@ -30,7 +30,7 @@ function Profile(props: { hide: boolean }) {
             </div>
 
             <div>
-
+                
             </div>
 
         </section>

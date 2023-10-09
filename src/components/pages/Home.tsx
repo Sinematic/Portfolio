@@ -36,29 +36,30 @@ function Home() {
 
     const playAutomatically = () => {
 
-        if (page === "profile") {
-
-            setTimeout(() => {   
-                togglePage("projects")
-            }, 3000)
-        }        
+        if (automatic) {
+            if (page === "profile") {
+                setTimeout(() => {   
+                    if (automatic) togglePage("projects")
+                }, 3000)
+            }
         
-        if (page === "projects") {
-
-            setTimeout(() => {    
-                togglePage("stack")
-            }, 3000)
-        }        
+            if (page === "projects") {
+                setTimeout(() => {    
+                    if (automatic) togglePage("stack")
+                }, 3000)
+            }
         
-        if (page === "stack") {
-
-            setTimeout(() => {    
-                togglePage("profile")
-                setAutomatic(false)
-            }, 3000)
+            if (page === "stack") {
+                setTimeout(() => {  
+                    if (automatic) {
+                        togglePage("profile")
+                        setAutomatic(false)
+                    }
+                }, 3000)
+            }
         }
     }
-
+    
     const handleDetails = () => {
 
         if (showOptionDetails) setShowOptionDetails(false)
@@ -66,8 +67,9 @@ function Home() {
         if (showOptionDetails === false) {
 
             setShowOptionDetails(true) 
-            setTimeout(() => {
-                setShowOptionDetails(false)
+            const id = setTimeout(() => {
+                if (showOptionDetails) setShowOptionDetails(false)
+                else clearTimeout(id)
             }, 3000)
         }
     }
