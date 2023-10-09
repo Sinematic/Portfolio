@@ -23,3 +23,8 @@ body, html {
 li {
 	list-style: none;
 }
+
+a {
+	color: initial;
+	text-decoration: none;
+}

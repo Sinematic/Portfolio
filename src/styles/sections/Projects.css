@@ -2,7 +2,6 @@
     top: 20%;
 }
 
-
 #projects > button {
     width: fit-content;
     background-color: var(--black);
@@ -32,6 +31,8 @@
     left: 0;
     width: 480px;
     height: 285px;
+    background-color: var(--black);
+    color: #FFFFFF;
     border-radius: 10px;
 }
 
@@ -43,7 +44,6 @@
 
 .hover {
     align-items: space-between;
-    background-color: var(--black);
     color: var(--black);
     opacity: 0;
     padding-block: 24px;
@@ -88,7 +88,7 @@
     font-size: 1rem;
 }
 
-.skill-icon {
+.skill-icon, .github > svg {
     width: 36px;
     height: 36px;
     margin: auto;
@@ -113,14 +113,22 @@
     stroke: #FFFFFF;
     background-color: var(--black);
     border-radius: 20px;
-    transition: all 0.4s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .arrows > svg:hover {
     background-color: var(--orange);
-    transition: all 0.4s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 .next {
     transform: scaleX(-1);
+}
+
+.github a {
+    position: absolute;
+    left: 2px;
+    bottom: 0px;
+    font-weight: 700;
+    color: #FFFFFF;
 }

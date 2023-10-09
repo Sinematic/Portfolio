@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "../../styles/sections/Profile.css"
 
 function Profile(props: { hide: boolean }) {
@@ -7,6 +7,11 @@ function Profile(props: { hide: boolean }) {
 
     const [displayBio, setDisplayBio] = useState(false)
     const toggleBio = ()  => setDisplayBio(!displayBio)
+
+    useEffect(() => {
+        setDisplayBio(false)
+    }, [hide])
+    
 
     return (
         <section id="profile" className={hide ? "hidden" : ""} >
@@ -23,6 +28,11 @@ function Profile(props: { hide: boolean }) {
                 <button onClick={toggleBio} className={"dark-button" + (displayBio ? " revealed" : "")}>
                     {displayBio ? "See less 😌" : "See more ✨"}</button>
             </div>
+
+            <div>
+
+            </div>
+
         </section>
     )
 }

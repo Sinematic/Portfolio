@@ -55,3 +55,77 @@
     background-color: var(--orange);
     transition: background-color 0.6s ease-in;
 }
+
+.options {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: 20px;
+    right: 15%;
+}
+
+.toggle {
+    width: 70px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: var(--black);
+    transition: all 0.4s ease-out;
+    z-index: 2;
+}
+
+.toggle:has(.round.toggled) {
+    background-color: var(--orange);
+    transition: all 0.4s ease-out;
+}
+
+.round {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #FFFFFF;
+    transform: translateX(0);
+    transition: all 0.4s ease-in;
+}
+
+.round.toggled {
+    transform: translateX(30px);
+    transition: all 0.4s;
+}
+
+.details {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    height: 40px;
+    padding-block: 5px;
+}
+
+.details > p {
+    max-width: 0px; 
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    transform-origin: right;
+    transition: all 1s ease-out;
+}
+
+.details > p.revealed {
+    max-width: 600px;
+    transform-origin: right;
+    transition: all 1s ease-out;
+}
+
+.details > svg {
+    stroke: var(--black);
+    width: 30px;
+    height: 100%;
+    z-index: 2000000;
+    transition: all 0.2s ease-in-out;
+}
+
+.details > svg:hover {
+    stroke: var(--orange);
+    transition: all 0.2s;
+}
