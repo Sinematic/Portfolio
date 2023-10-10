@@ -49,7 +49,7 @@ function Projects(props: { hide: boolean }) {
                             </ol>
 
 							<div className="github">
-								<a href={projects[index].github} target="_blank">Github</a>
+								<a href={projects[index].github} target="_blank">🧷 Github</a>
 							</div>
                         </div>
                     }

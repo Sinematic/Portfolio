@@ -5,10 +5,10 @@
 .footer-item > a > img {
     padding: 5px;
     width: 54px;
+    height: 54px;
     background-color: var(--bright-color);
     border-radius: 8px;
 }
-
 
 @media all and (max-width: 1240px) {
 

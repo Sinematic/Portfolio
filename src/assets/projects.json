@@ -13,7 +13,7 @@
                 }
             ],
             "description": "Discover the ultimate Full-Stack, All-in-JS application! CuisineFiesta offers secure authentication and seamless CRUD operations on a comprehensive recipe API. Unleash your inner chef and explore a world of culinary delights.",
-            "image": "https://github.com/Sinematic/CuisineFiesta-F/raw/main/src/assets/readme-images/search.png",
+            "image": "https://github.com/Sinematic/CuisineFiesta-F/blob/main/src/assets/readme-images/search.png?raw=true",
             "github": "https://github.com/Sinematic/CuisineFiesta-F"
         },
         {
@@ -44,7 +44,7 @@
                 }
             ],
             "description": "For this project, I created an API with MongoDB, Mongoose, Node.js, Express, Postman, as well as Sharp and Multer to allow users to add optimized images to the site.",
-            "image": "https://user-images.githubusercontent.com/34093876/273563033-ec2d5a13-0404-4ee3-bff0-dd21cdfc9f36.png",
+            "image": "https://media.discordapp.net/attachments/1034982919434940426/1161299902056374433/p7.jpg?ex=6537cbd0&is=652556d0&hm=382323f6c23d0a95f21affdba88a19e7862f4a013f27eec7c7233a2a93e57ca0&=",
             "github": "https://github.com/Sinematic/P7_API_Livres"
         }
     ]

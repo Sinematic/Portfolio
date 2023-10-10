@@ -160,7 +160,7 @@
     }
     
     .project > .face > .project-image {
-        border-radius: 10px;
+        border-radius: 10px 10px 0 0;
     }
     
     .project > .project-description .skills {
@@ -218,7 +218,7 @@
     
     .project > .face > .project-image {
         aspect-ratio: 3 / 2;
-        border-radius: 5px;
+        border-radius: 5px 5px 0 0;
     }
     
     .project > .project-description .skills {

@@ -1,5 +1,34 @@
+@keyframes roulette {
+    
+    0%, 5%, 10%, 15%, 100% {
+        position: relative;
+        top: 0;
+    }
+
+    2.5%, 7.5%, 12.5% {
+        top: -100%;
+    }
+}
+
+@keyframes shake {
+    0%, 9%, 18%, 27%, 36%, 45%, 54%, 63%, 72%, 81%, 100% {
+        transform: translateX(0);
+        stroke: var(--orange);
+    }
+
+    3%, 12%, 21%, 30%, 39%, 48%, 57%, 66%, 75% {
+        transform: translateX(-10%);
+    }
+
+    6%, 15%, 24%, 33%, 42%, 51%, 60%, 69%, 78% {
+        transform: translateX(10%);
+    }
+}
+
 #stack {
     top: 30%;
+    gap: 30px;
+    color: var(--black);
 }
 
 #stack > ol {
@@ -11,6 +40,17 @@
     margin: 0 auto;
 }
 
+#stack > h2 {
+    cursor: pointer;
+    line-height: normal;
+}
+
+#stack > h2:hover, #stack > h2:hover + .stack-icon > svg {
+    color: var(--orange);
+    stroke: var(--orange);
+    transition: color 0.3s ease-in, stroke 0.5s 0.3s ease-in-out;
+}
+
 #stack > ol li {
     display: grid;
     justify-content: center;
@@ -20,7 +60,91 @@
     border-radius: 5px;
 }
 
-.stack-icon {
-    margin: auto;
+.stack-icon, .stack-img {
     width: 64px;
+    height: 64px;
+    margin: auto;
+}
+
+.stack-icon > svg {
+    stroke: var(--black);
+    transition: all 0.4s ease-in;
+}
+
+.shake {
+    animation: shake 0.8s ease-in-out infinite;
+}
+
+.stack-icon:hover > svg {
+    stroke: var(--orange);
+    color: var(--orange);
+    transition: all 0.4s ease-out;
+    animation: shake 0.8s 3s ease-in-out;
+}
+
+#stack > h2:hover + .stack-icon > svg,
+.stack-icon:hover > svg,
+.stack-icon > svg:hover {
+    animation: shake 0.8s 1s ease-in-out infinite;
+}
+
+@media all and (max-width: 1240px) {
+ 
+    #stack {
+        top: 10%;
+        gap: 27px;
+    }
+
+    #stack > ol {
+        gap: 42px;
+        width: 80%;
+        grid-template-columns: repeat(auto-fit, 125px);
+    }
+
+    #stack > ol li {
+        gap: 10px;
+        padding: 12px 0;
+        border: 1px solid #d3d7d7;
+        border-radius: 5px;
+    }
+}
+
+@media all and (max-width: 720px) {
+     
+    #stack {
+        top: 80px;
+    }
+
+    #stack > ol {
+        gap: 24px;
+        width: calc(100% - 40px);
+        grid-template-columns: repeat(auto-fit, 100px);
+    }
+
+    #stack > ol li {
+        gap: 8px;
+        padding: 9px 0;
+    }   
+
+    .stack-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    
+    #stack > ol {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, 80px);
+    }
+
+    #stack >  ol > li > p {
+        display: none;
+    }
+    
+    .stack-img {
+        width: 42px;
+        height: 42px;
+    }
 }
