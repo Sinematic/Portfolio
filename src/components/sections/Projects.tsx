@@ -7,6 +7,8 @@ function Projects(props: { hide: boolean }) {
 
     const { hide } = props
 
+    const width = window.innerWidth
+
     const [index, setIndex] = useState(0)
     const [display, setDisplay] = useState(false)
 
@@ -22,17 +24,19 @@ function Projects(props: { hide: boolean }) {
 
             <div className="projects-list">
 
-                <div onMouseEnter={() => setDisplay(true)} onMouseLeave={() => setDisplay(false)}
+                <div onMouseEnter={width > 1024 ? () => setDisplay(true) : undefined} 
+                onMouseLeave={width > 1024 ? () => setDisplay(false) : undefined}
+                onClick={width <= 1024 ? () => setDisplay(!display) : undefined}
                 key={uuidv4()} className="project" >
 
 
-                    {display ? 
+                    {!display ? 
                         <div className="face">
                             <img src={projects[index].image} alt={projects[index].title} className="project-image" />
                             <h3>{projects[index].title}</h3>
                         </div>
                     :
-                        <div className={(!display ? "revealed " :  "") + "hover"}>
+                        <div className={(display ? "revealed " :  "") + "project-description"}>
                             <p className="description">{projects[index].description}</p>                      
                             <ol className="skills">
                                 {projects[index].skills.map((skill) => 

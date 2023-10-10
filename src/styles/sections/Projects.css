@@ -8,21 +8,21 @@
 }
 
 .projects-list > .project {
-    width: 480px;
-    height: 380px;
-    overflow: hidden;
     margin: auto;
+    height: 285px;
+    aspect-ratio: 480 / 285;
+    overflow: hidden;
     border-radius: 10px;
 }
 
-.face, .hover {
+.face, .project-description {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
-    width: 480px;
-    height: 285px;
+    width: 100%;
+    height: 100%;
     background-color: var(--black);
     color: #FFFFFF;
     border-radius: 10px;
@@ -34,7 +34,7 @@
     overflow: hidden;
 }
 
-.hover {
+.project-description {
     align-items: space-between;
     color: var(--black);
     opacity: 0;
@@ -43,7 +43,7 @@
     z-index: 200;
 }
 
-.hover.revealed {
+.project-description.revealed {
     opacity: 1;
     color: #FFFFFF;
     transition: opacity 0.9s ease-out, color 0.2 0.9s ease-in-out;
@@ -61,7 +61,7 @@
     object-fit: cover;
 }
 
-.project > .hover .skills {
+.project > .project-description .skills {
     position: absolute;
     bottom: 15px;
     left: 50%;
@@ -71,16 +71,16 @@
     gap: 40px;
 }
 
-.project > .hover li {
+.project > .project-description li {
     display: grid;
     grid-template-columns: 1fr;
 }
 
-.project > .hover li > p {
+.project > .project-description li > p {
     font-size: 1rem;
 }
 
-.skill-icon, .github > svg {
+.skill-icon {
     width: 36px;
     height: 36px;
     margin: auto;
@@ -93,7 +93,7 @@
 .arrows {
     position: absolute;
     bottom: 50%;
-    transform: translateY(-50%);
+    transform: translateY(50%);
     left: -100px;
     right: -100px;
     display: flex;
@@ -143,57 +143,127 @@
 
 @media all and (max-width: 720px) {
 
-    .projects-list > .project {
-        width: calc(100% - 40px);
-        margin: auto;
-        height: 380px;
-    }
-    
-    .face, .hover {
-        width: 100%;
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        position: static;
-        overflow: visible;
+    #projects {
+        gap: 20px;
     }
 
-    .hover {
+    .projects-list > .project {
+        height: 100%;
+        width: 90vw;
+        aspect-ratio: 5 / 3;
+        border-radius: 5px;
+    }
+
+    .project-description {
         padding-block: 10px;
         padding-inline: 15px;
     }
     
-    .project h3 {
-        font-size: 1.2rem;
-        font-weight: 500;
-        text-align: center;
-    }
-    
     .project > .face > .project-image {
-        aspect-ratio: 2.7 / 1;
         border-radius: 10px;
     }
     
-    .project > .hover .skills {
+    .project > .project-description .skills {
+        width: 100%;
+        padding-right: 15px;
+        justify-content: flex-end;
         gap: 20px;
     }
 
-    .skill-icon, .github > svg {
-        width: 30px;
-        height: 30px;
+    .project .description {
+        font-size: 0.95rem;
+    }
+
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .skills p {
+        display: none;
     }
 
     .arrows {
-        left: 20px;
-        right: 20px;
+        bottom: -100px;
+        left: 40px;
+        right: 40px;
     }
     
     .arrows > svg {
-        max-width: 42px;
+        max-width: 40px;
         border-radius: 10px;
+    }
+
+    .github a {
+        left: 15px;
+        bottom: 10px;
     }
 }
 
 @media all and (max-width: 375px) {
 
+    #projects {
+        gap: 25px;
+    }
+
+    .projects-list > .project {
+        aspect-ratio: 5 / 4;
+        border-radius: 5px;
+    }
+
+    .project-description {
+        padding-block: 6px;
+        padding-inline: 8px;
+    }
+    
+    .project > .face > .project-image {
+        aspect-ratio: 3 / 2;
+        border-radius: 5px;
+    }
+    
+    .project > .project-description .skills {
+        bottom: 6px;
+        justify-content: flex-end;
+        padding-right: 8px;
+        gap: 12px;
+    }
+
+    .project .description {
+        font-size: 0.9rem;
+    }
+
+    .skill-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .arrows {
+        bottom: -80px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .github a {
+        bottom: 15px;
+    }
+}
+
+@media all and (max-width: 300px) {    
+    
+    .project > .project-description .skills {
+        gap: 8px;
+    }
+
+    .project .description {
+        font-size: 0.82rem;
+    }
+
+    .skill-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .github a {
+        bottom: 6px;
+    }
 }
