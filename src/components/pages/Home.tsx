@@ -8,8 +8,10 @@ import Stack from "../sections/Stack"
 
 function Home() {
 
+    const width = window.innerWidth
+
     const storageItem = localStorage.getItem("auto")
-    const auto = storageItem !== null ? JSON.parse(storageItem) : true
+    const auto = storageItem !== null ? JSON.parse(storageItem) : false
 
     const [page, setPage] = useState<string>("profile")
     const [hideProfile, setHideProfile] = useState<boolean>(false)
@@ -39,26 +41,12 @@ function Home() {
     const playAutomatically = () => {
 
         if (automatic) {
-            if (page === "profile") {
-                setTimeout(() => {   
-                    if (automatic !== true) return 
-                    togglePage("projects")
-                }, 3000)
-            }
-        
-            if (page === "projects") {
-                setTimeout(() => {    
-                    if (automatic !== true) return
-                    togglePage("stack")
-                }, 3000)
-            }
-        
+
+            if (page === "profile") togglePage("projects")
+            if (page === "projects") togglePage("stack")
             if (page === "stack") {
-                setTimeout(() => {  
-                    if (automatic !== true) return
-                    togglePage("profile")
-                    setAutomatic(false)
-                }, 3000)
+                togglePage("profile")
+                setAutomatic(false)
             }
         }
     }
@@ -79,7 +67,11 @@ function Home() {
 
     useEffect(() => {
         localStorage.setItem("auto", automatic.toString())
-        if(automatic) playAutomatically()
+
+        let id;
+        if (automatic === false) clearTimeout(id)
+        if (automatic) id = setTimeout(() => { playAutomatically() }, 2000)
+
     }, [page, automatic])
 
 
@@ -89,7 +81,8 @@ function Home() {
             <div className="options">
 
                 <div className="details" onClick={handleDetails}>
-                    <p className={showOptionDetails ? "revealed" : ""}>Discovery mode (automatically guides you through the website)</p>
+                    <p className={showOptionDetails ? "revealed" : ""}>
+                        Discovery mode{width > 1024 ? "(automatically guides you through the website)" : null}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <circle cx="12" cy="12" r="10"/>

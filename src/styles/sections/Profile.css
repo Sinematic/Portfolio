@@ -48,6 +48,7 @@
 
 .picture-container > .bio.revealed {
     top: 0;
+    left: 0;
     color: #FFFFFF;
     transition: top 0.8s 0.2s ease-in-out, color 0.2s 1s ease-in-out;
 }

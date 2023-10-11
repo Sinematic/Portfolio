@@ -40,11 +40,11 @@ function Stack(props: { hide: boolean }) {
                 {skills.map((skill) => 
                     <li key={skill.name}>
                         <img src={skill.image} alt="" className="stack-img" />
-                        <p>{skill.name}</p>
+                        <p className="stack-name">{skill.name}</p>
                     </li>
                 )}
             </ol>
-
+            
         </section>
     )
 }

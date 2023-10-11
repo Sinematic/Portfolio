@@ -10,6 +10,7 @@
     src: url('/src/assets/fonts/Montserrat/Montserrat-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: swap; 
 }
 
 @font-face {
@@ -29,7 +30,7 @@
 :root {
 	--black: #181E25;
 	--orange: #ee640f;
-	--green: #008000;
+	--purple: #8E24AA;
 }
 
 #root {

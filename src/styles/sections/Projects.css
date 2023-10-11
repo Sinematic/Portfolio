@@ -30,7 +30,6 @@
 
 .face {
     border: 3px solid var(--black);
-    gap: 8px;
     overflow: hidden;
 }
 
@@ -53,6 +52,10 @@
     font-size: 1.2rem;
     font-weight: 500;
     text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project > .face > .project-image {
@@ -204,6 +207,10 @@
 
     #projects {
         gap: 25px;
+    }
+
+    .project h3 {
+        font-size: 1rem;
     }
 
     .projects-list > .project {
