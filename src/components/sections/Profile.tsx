@@ -35,11 +35,12 @@ function Profile(props: { hide: boolean }) {
                 </button>
 
             </div>
-
-            <div>
-                
+            
+            <div className={"bio-education" + (displayBio ? " revealed" : "")}>
+                I kickstarted my journey with a brief but intensive one-month Python bootcamp. 
+                However, it was during my time at OpenClassrooms that I truly delved into the world of development and immersed myself in the vast JavaScript ecosystem. 
+                Today, I specialize in front-end development, dedicated to crafting captivating and user-friendly web interfaces.
             </div>
-
         </section>
     )
 }
