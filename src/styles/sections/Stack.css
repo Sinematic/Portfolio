@@ -14,14 +14,12 @@
 
     50%, 70%, 80%, 87% {
         transform-origin: center;
-        transform: scale(2)
+        transform: scale(2) translateY(7px);
     }
 
     65%, 75%, 85% {
         transform: scale(1.5);
     }
-
-
 }
 
 @keyframes shake {
@@ -94,10 +92,10 @@
     margin: auto;
 }
 /*
-#stack > h2:hover + ol .stack-img,
+#stack > h2:hover + ol .stack-img,*/
 #stack > ol li:hover .stack-img {
     animation: explode 5s 0.8s ease-in-out infinite;    
-}*/
+}
 
 #stack > h2 + ol > li:hover .stack-name {
     animation: offStream 0s 1s ease-in-out forwards;    

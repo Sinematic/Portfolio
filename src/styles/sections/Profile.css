@@ -91,7 +91,8 @@
 
 @media all and (max-width: 1240px) {
     .bio-education {
-        display: none;
+        top: 370px;
+        width: 80%;
     }
 }
 
@@ -114,6 +115,10 @@
 
     .bio > p {
         font-size: 1.2rem;
+    }
+
+    .bio-education {
+        display: none;
     }
     
     #profile > .profile-info {

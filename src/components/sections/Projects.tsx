@@ -7,16 +7,21 @@ function Projects(props: { hide: boolean }) {
 
     const { hide } = props
 
-    const width = window.innerWidth
-
     const [index, setIndex] = useState(0)
-    const [display, setDisplay] = useState(false)
 
+    const [projectIndex, setProjectIndex] = useState(0)
 	const projects = data.projects
-    const next = () => index < projects.length - 1 ? setIndex(index + 1) : setIndex(0)
-	const previous = () => index > 0 ? setIndex(index - 1) : setIndex(projects.length -1)
 
+    const next = () => {
+        setProjectIndex(0)
+        index < projects.length - 1 ? setIndex(index + 1) : setIndex(0)
+    }
+	const previous = () => {
+        setProjectIndex(0)
+        index > 0 ? setIndex(index - 1) : setIndex(projects.length -1)
+    }
     
+
     return (
         <section id="projects" className={hide ? "hidden" : ""}>
 
@@ -24,19 +29,16 @@ function Projects(props: { hide: boolean }) {
 
             <div className="projects-list">
 
-                <div onMouseEnter={width > 1024 ? () => setDisplay(true) : undefined} 
-                onMouseLeave={width > 1024 ? () => setDisplay(false) : undefined}
-                onClick={width <= 1024 ? () => setDisplay(!display) : undefined}
-                key={uuidv4()} className="project" >
+                <div key={uuidv4()} className={(projectIndex === 0 ? "border " : "") + "project"}>
 
-
-                    {!display ? 
-                        <div className="face">
+                    {projectIndex === 0 ? 
+                        <div className="front">
                             <img src={projects[index].image} alt={projects[index].title} className="project-image" />
                             <h3>{projects[index].title}</h3>
                         </div>
-                    :
-                        <div className={(display ? "revealed " :  "") + "project-description"}>
+                    : null}
+                    {projectIndex === 1 ?
+                        <div className="project-description text">
                             <p className="description">{projects[index].description}</p>                      
                             <ol className="skills">
                                 {projects[index].skills.map((skill) => 
@@ -52,7 +54,23 @@ function Projects(props: { hide: boolean }) {
 								<a href={projects[index].github} target="_blank">🧷 Github</a>
 							</div>
                         </div>
-                    }
+                    : null}
+
+                    {projectIndex === 2 ? 
+                        <div className="issues text"> 
+                            More : {projects[index].issues}
+                        </div>
+                    : null}
+
+                    <div className="squares">
+                        <div onClick={projectIndex !== 0 ? () => setProjectIndex(0) : undefined}
+                        className={(projectIndex === 0 ? "selected " : "") + "square"}></div>
+                        <div onClick={projectIndex !== 1 ? () => setProjectIndex(1) : undefined}
+                         className={(projectIndex === 1 ? "selected " : "") + "square"}></div>
+                        <div onClick={projectIndex !== 2 ? () => setProjectIndex(2) : undefined}
+                         className={(projectIndex === 2 ? "selected " : "") + "square"}></div>
+                    </div>
+
                 </div>
 
 				<div className="arrows">

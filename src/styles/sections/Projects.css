@@ -12,40 +12,67 @@
     height: 285px;
     aspect-ratio: 480 / 285;
     overflow: hidden;
+    color: #FFFFFF;
     border-radius: 10px;
 }
 
-.face, .project-description {
+.front {
+    overflow: hidden;
+    border: 3px solid var(--black);
+}
+
+.front, .project-description {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     background-color: var(--black);
-    color: #FFFFFF;
     border-radius: 10px;
 }
 
-.face {
-    border: 3px solid var(--black);
+.project > div:not(.squares) {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    background-color: var(--black);
+    border-radius: 10px;
     overflow: hidden;
+}
+
+.project-details {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    padding: 5px;
+    background-color: var(--orange);
+}
+
+.project-details > svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--black);
 }
 
 .project-description {
     align-items: space-between;
-    color: var(--black);
-    opacity: 0;
     padding-block: 24px;
     padding-inline: 30px;
     z-index: 200;
 }
 
-.project-description.revealed {
-    opacity: 1;
+.text {
+    background-color: var(--black);
     color: #FFFFFF;
-    transition: opacity 0.9s ease-out, color 0.2 0.9s ease-in-out;
+}
+
+.issues {
+    padding-block: 12px;
+    padding-inline: 15px;
 }
 
 .project h3 {
@@ -58,7 +85,7 @@
     justify-content: center;
 }
 
-.project > .face > .project-image {
+.project > .front > .project-image {
     width: 100%;
     aspect-ratio: 2 / 1;
     object-fit: cover;
@@ -128,6 +155,30 @@
     color: #FFFFFF;
 }
 
+.squares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.square {
+    width: 14px;
+    height: 14px;
+    background-color: var(--black);
+    border: 1px solid var(--black);
+}
+
+.squares > .selected {
+    background-color: #FFFFFF;
+}
+
 @media all and (max-width: 1240px) {
 
     #projects {
@@ -162,7 +213,7 @@
         padding-inline: 15px;
     }
     
-    .project > .face > .project-image {
+    .project > .front > .project-image {
         border-radius: 10px 10px 0 0;
     }
     
@@ -173,7 +224,7 @@
         gap: 20px;
     }
 
-    .project .description {
+    .text {
         font-size: 0.95rem;
     }
 
@@ -223,7 +274,7 @@
         padding-inline: 8px;
     }
     
-    .project > .face > .project-image {
+    .project > .front > .project-image {
         aspect-ratio: 3 / 2;
         border-radius: 5px 5px 0 0;
     }
@@ -235,7 +286,7 @@
         gap: 12px;
     }
 
-    .project .description {
+    .project .text {
         font-size: 0.9rem;
     }
 
@@ -261,8 +312,8 @@
         gap: 8px;
     }
 
-    .project .description {
-        font-size: 0.82rem;
+    .project .text {
+        font-size: 0.75rem;
     }
 
     .skill-icon {

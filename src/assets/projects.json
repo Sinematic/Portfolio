@@ -13,6 +13,7 @@
                 }
             ],
             "description": "Discover the ultimate Full-Stack, All-in-JS application! CuisineFiesta offers secure authentication and seamless CRUD operations on a comprehensive recipe API. Unleash your inner chef and explore a world of culinary delights.",
+            "issues": "I assumed responsibility for both front-end and back-end development in CuisineFiesta. This project taught me the value of patience and the iterative nature of front-end development. It was a valuable learning experience that allowed me to refine my design and user interface skills.",
             "image": "https://raw.githubusercontent.com/Sinematic/CuisineFiesta-F/main/src/assets/readme-images/authentification.webp",
             "github": "https://github.com/Sinematic/CuisineFiesta-F"
         },
@@ -27,6 +28,7 @@
                 }
             ],
             "description": "Explore the world of Pokémon with this interactive Pokédex application, powered by the public Pokébuild API. I've crafted a user-friendly experience using React and functional components, ensuring modular and efficient code.",
+            "issues": "In my first venture into React, I created a Pokédex application. The most challenging aspect was grasping the intricacies of the state and props system within React. However, as I delved deeper into the project, things started to fall into place.",
             "image": "https://github.com/Sinematic/Pokedex-React/blob/main/src/assets/images/pokedex-react-presentation.png?raw=true",
             "github": "https://github.com/Sinematic/Pokedex-React"
         }, {
@@ -44,6 +46,7 @@
                 }
             ],
             "description": "For this project, I created an API with MongoDB, Mongoose, Node.js, Express, Postman, as well as Sharp and Multer to allow users to add optimized images to the site.",
+            "issues": "This project introduced me to technologies like Sharp and Multer. The mechanics of middlewares were relatively straightforward but handling media assets in web development for web performance was NOT a piece of cake !",
             "image": "https://media.discordapp.net/attachments/1034982919434940426/1161299902056374433/p7.jpg?ex=6537cbd0&is=652556d0&hm=382323f6c23d0a95f21affdba88a19e7862f4a013f27eec7c7233a2a93e57ca0&=",
             "github": "https://github.com/Sinematic/P7_API_Livres"
         }
