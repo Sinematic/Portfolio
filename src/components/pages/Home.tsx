@@ -1,6 +1,6 @@
 import "../../styles/pages/Home.css"
 import Footer from "../Footer/Footer"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Nav from "../Nav/Nav"
 import Profile from "../sections/Profile"
 import Projects from "../sections/Projects"
@@ -12,6 +12,8 @@ function Home() {
 
     const storageItem = localStorage.getItem("auto")
     const auto = storageItem !== null ? JSON.parse(storageItem) : false
+
+    const redirectionRef = useRef<number | undefined>(undefined)
 
     const [page, setPage] = useState<string>("profile")
     const [hideProfile, setHideProfile] = useState<boolean>(false)
@@ -34,7 +36,7 @@ function Home() {
             setHideStack(true)
             param === "profile" ? setHideProfile(false) : setHideProjects(false)
         }
-        
+
         setTimeout(() => { setPage(param) }, 1000)
     }
 
@@ -68,9 +70,11 @@ function Home() {
     useEffect(() => {
         localStorage.setItem("auto", automatic.toString())
 
-        let id;
-        if (automatic === false) clearTimeout(id)
-        if (automatic) id = setTimeout(() => { playAutomatically() }, 2000)
+        if (automatic) redirectionRef.current = setTimeout(() => { playAutomatically() }, 2000)
+
+        return () => {
+            clearTimeout(redirectionRef.current)
+        }
 
     }, [page, automatic])
 
