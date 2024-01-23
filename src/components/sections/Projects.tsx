@@ -13,11 +13,10 @@ function Projects(props: { hide: boolean }) {
 	const projects = data.projects
 
     const next = () => {
-        setProjectIndex(0)
         index < projects.length - 1 ? setIndex(index + 1) : setIndex(0)
     }
+
 	const previous = () => {
-        setProjectIndex(0)
         index > 0 ? setIndex(index - 1) : setIndex(projects.length -1)
     }
     
@@ -58,24 +57,32 @@ function Projects(props: { hide: boolean }) {
 
                     {projectIndex === 2 ? 
                         <div className="issues text"> 
-                            More : {projects[index].issues}
+                            {projects[index].issues}
                         </div>
                     : null}
 
+                    <nav className="projects-subparts-nav">
+                        <ul>
+                            <li onClick={projectIndex !== 0 ? () => setProjectIndex(0) : undefined}
+                            className={projectIndex === 0 ? "current": ""}>Overview</li>
+                            <li onClick={projectIndex !== 1 ? () => setProjectIndex(1) : undefined}
+                            className={projectIndex === 1 ? "current": ""}>Stack</li>
+                            <li onClick={projectIndex !== 2 ? () => setProjectIndex(2) : undefined}
+                            className={projectIndex === 2 ? "current": ""}>Thoughts</li>
+                        </ul>
+                    </nav>
+
                     <div className="squares">
-                        <div onClick={projectIndex !== 0 ? () => setProjectIndex(0) : undefined}
-                        className={(projectIndex === 0 ? "selected " : "") + "square"}></div>
-                        <div onClick={projectIndex !== 1 ? () => setProjectIndex(1) : undefined}
-                         className={(projectIndex === 1 ? "selected " : "") + "square"}></div>
-                        <div onClick={projectIndex !== 2 ? () => setProjectIndex(2) : undefined}
-                         className={(projectIndex === 2 ? "selected " : "") + "square"}></div>
+                        <div className={(index === 0 ? "selected " : "") + "square"}></div>
+                        <div className={(index === 1 ? "selected " : "") + "square"}></div>
+                        <div className={(index === 2 ? "selected " : "") + "square"}></div>
                     </div>
 
                 </div>
 
 				<div className="arrows">
 					<svg onClick={previous} className="previous" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" 
-					stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+					stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
 						<path d="m12 8-4 4 4 4"/>
 						<path d="M16 12H8"/>
 					</svg>	
@@ -86,6 +93,7 @@ function Projects(props: { hide: boolean }) {
 						<path d="M16 12H8"/>
 					</svg>
 				</div>
+
             </div>
         </section>
     )

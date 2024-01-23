@@ -9,7 +9,7 @@
 
 .projects-list > .project {
     margin: auto;
-    height: 285px;
+    height: 330px;
     aspect-ratio: 480 / 285;
     overflow: hidden;
     color: #FFFFFF;
@@ -122,19 +122,18 @@
 
 .arrows {
     position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);
-    left: -100px;
-    right: -100px;
+    bottom: -50px;
+    left: 5%;
+    right: 5%;
     display: flex;
     justify-content: space-between;
 }
 
 .arrows > svg {
-    max-width: 64px;
+    max-width: 45.59px;
     stroke: #FFFFFF;
     background-color: var(--black);
-    border-radius: 20px;
+    border-radius: 5px;
     transition: all 0.3s ease-in;
 }
 
@@ -163,7 +162,7 @@
     width: 150px;
     height: 80px;
     position: absolute;
-    top: 100%;
+    bottom: -115px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -179,19 +178,39 @@
     background-color: #FFFFFF;
 }
 
+.projects-subparts-nav {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 4;
+}
+
+.projects-subparts-nav > ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+.projects-subparts-nav > ul > li {
+    padding: 10px 16px;
+    background-color: var(--black);
+    transition: background-color 2s -1s ease-in-out;
+}
+
+.projects-subparts-nav > ul > li.current {
+    background-color: var(--orange);
+    transition: background-color 2s -1s ease-in-out;
+}
+
 @media all and (max-width: 1240px) {
 
     #projects {
         top: 60px;
-    }
-
-    .arrows {
-        left: -60px;
-        right: -60px;
-    }
-
-    .arrows > svg {
-        max-width: 48px;
     }
 }
 
@@ -237,20 +256,27 @@
         display: none;
     }
 
-    .arrows {
-        bottom: -100px;
-        left: 40px;
-        right: 40px;
-    }
-    
-    .arrows > svg {
-        max-width: 40px;
-        border-radius: 10px;
-    }
-
     .github a {
         left: 15px;
         bottom: 10px;
+    }
+
+    .projects-subparts-nav {
+        width: 100%;
+    }
+
+    .projects-subparts-nav > ul > li {
+        padding: 7px 12px;
+    }
+    
+    .arrows {
+        left: 15%;
+        right: 15%;
+        bottom: -91px;
+    }
+    
+    .arrows > svg {
+        max-width: 32px;
     }
 }
 
@@ -293,12 +319,6 @@
     .skill-icon {
         width: 30px;
         height: 30px;
-    }
-
-    .arrows {
-        bottom: -80px;
-        left: 20px;
-        right: 20px;
     }
 
     .github a {
