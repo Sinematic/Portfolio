@@ -21,23 +21,33 @@ function Home() {
     const [hideStack, setHideStack] = useState<boolean>(true)
     const [automatic, setAutomatic] = useState<boolean>(auto)
     const [showOptionDetails, setShowOptionDetails] = useState<boolean>(false)
+    const [transitioning, setTransitioning] = useState<boolean>(false);
+
     
     const togglePage = (param: string) => {
 
-        if (page === "profile") {
-            setHideProfile(true)
-            param === "projects" ? setHideProjects(false) : setHideStack(false)
-        }
-        if (page === "projects") {
-            setHideProjects(true)
-            param === "stack" ? setHideStack(false) : setHideProfile(false)
-        }
-        if (page === "stack") {
-            setHideStack(true)
-            param === "profile" ? setHideProfile(false) : setHideProjects(false)
-        }
+        if (transitioning === false) {
 
-        setTimeout(() => { setPage(param) }, 1000)
+            setTransitioning(true)
+
+            if (page === "profile") {
+                setHideProfile(true)
+                param === "projects" ? setHideProjects(false) : setHideStack(false)
+            }
+            if (page === "projects") {
+                setHideProjects(true)
+                param === "stack" ? setHideStack(false) : setHideProfile(false)
+            }
+            if (page === "stack") {
+                setHideStack(true)
+                param === "profile" ? setHideProfile(false) : setHideProjects(false)
+            }
+    
+            setTimeout(() => { 
+                setPage(param) 
+                setTransitioning(false)
+            }, 1000)
+        }
     }
 
     const playAutomatically = () => {
