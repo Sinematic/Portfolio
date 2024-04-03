@@ -47,7 +47,7 @@
             ],
             "description": "For this project, I created an API with MongoDB, Mongoose, Node.js, Express, Postman, as well as Sharp and Multer to allow users to add optimized images to the site.",
             "issues": "This project introduced me to technologies like Sharp and Multer. The mechanics of middlewares were relatively straightforward but handling media assets in web development for web performance was NOT a piece of cake !",
-            "image": "https://media.discordapp.net/attachments/1034982919434940426/1161299902056374433/p7.jpg?ex=6537cbd0&is=652556d0&hm=382323f6c23d0a95f21affdba88a19e7862f4a013f27eec7c7233a2a93e57ca0&=",
+            "image": "https://private-user-images.githubusercontent.com/34093876/273563033-ec2d5a13-0404-4ee3-bff0-dd21cdfc9f36.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIxMzcwODQsIm5iZiI6MTcxMjEzNjc4NCwicGF0aCI6Ii8zNDA5Mzg3Ni8yNzM1NjMwMzMtZWMyZDVhMTMtMDQwNC00ZWUzLWJmZjAtZGQyMWNkZmM5ZjM2LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDAzVDA5MzMwNFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkxNzk0NDM2Y2RhNjViNzJjMTcxYjZhMTVlZmQ2Zjk1M2Y0ZTVkY2QwN2RmYjA2OGE1Y2U3ZGVmNDJjNGZkMmUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.q90tf1pmUeFJYl-rDFtrAmAsWz_ivRNVNOwzwTYANRs",
             "github": "https://github.com/Sinematic/P7_API_Livres"
         }
     ]
